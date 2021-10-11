@@ -9,8 +9,7 @@
  *
  * Return: string
  */
-	char *
-	convert(long int num, int base, int flags, params_t *params)
+char *convert(long int num, int base, int flags, params_t *params)
 {
 	static char *array;
 	static char buffer[50];
@@ -46,8 +45,7 @@
  *
  * Return: bytes printed
  */
-	int
-	print_unsigned(va_list ap, params_t *params)
+int print_unsigned(va_list ap, params_t *params)
 {
 	unsigned long l;
 	​ if (params->l_modifier)
@@ -68,8 +66,7 @@
  *
  * Return: bytes printed
  */
-	int
-	print_address(va_list ap, params_t *params)
+int print_address(va_list ap, params_t *params)
 {
 	unsigned long int n = va_arg(ap, unsigned long int);
 	char *str;
