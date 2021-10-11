@@ -25,7 +25,7 @@
 		{"R", print_rot13},
 		{NULL, NULL}};
 	int i = 0;
-	​ while (specifiers[i].specifier)
+	​while (specifiers[i].specifier)
 	{
 		if (*s == specifiers[i].specifier[0])
 		{
