@@ -25,7 +25,8 @@
 		{"R", print_rot13},
 		{NULL, NULL}};
 	int i = 0;
-	​while (specifiers[i].specifier)
+
+	while (specifiers[i].specifier)
 	{
 		if (*s == specifiers[i].specifier[0])
 		{
@@ -35,7 +36,6 @@
 	}
 	return (NULL);
 }
-​
 /**
  * get_print_func - finds the format func
  * @s: the format string
@@ -48,10 +48,12 @@
 	get_print_func(char *s, va_list ap, params_t *params)
 {
 	int (*f)(va_list, params_t *) = get_specifier(s);
-	​ if (f) return (f(ap, params));
+
+	if (f)
+		return (f(ap, params));
+
 	return (0);
 }
-​
 /**
  * get_flag - finds the flag func
  * @s: the format string
@@ -63,7 +65,8 @@
 	get_flag(char *s, params_t *params)
 {
 	int i = 0;
-	​ switch (*s)
+
+	switch (*s)
 	{
 	case '+':
 		i = params->plus_flag = 1;
@@ -83,7 +86,6 @@
 	}
 	return (i);
 }
-​
 /**
  * get_modifier - finds the modifier func
  * @s: the format string
@@ -95,7 +97,8 @@
 	get_modifier(char *s, params_t *params)
 {
 	int i = 0;
-	​ switch (*s)
+
+	switch (*s)
 	{
 	case 'h':
 		i = params->h_modifier = 1;
@@ -106,7 +109,6 @@
 	}
 	return (i);
 }
-​
 /**
  * get_width - gets the width from the format string
  * @s: the format string
@@ -119,7 +121,8 @@
 	get_width(char *s, params_t *params, va_list ap)
 {
 	int d = 0;
-	​ if (*s == '*')
+
+	if (*s == '*')
 	{
 		d = va_arg(ap, int);
 		s++;
