@@ -104,4 +104,3 @@ if (params->hashtag_flag && l)
 params->unsign = 1;
 return (c += print_number(str, params));
 }
-
